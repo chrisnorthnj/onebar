@@ -32,7 +32,21 @@
 </head>
 <!-- SET THE CONTROLLER -->
 <body ng-controller="mainController">
-	<div class="container">
+    <!-- Experiment with Tag input here -->
+    <tags-input ng-model="tags"
+                display-property="name"
+                placeholder="Add a country"
+                replace-spaces-with-dashes="false"
+                template="tag-template">
+        <auto-complete source="loadCountries($query)"
+                       min-length="0"
+                       load-on-focus="true"
+                       load-on-empty="true"
+                       max-results-to-show="32"
+                       template="autocomplete-template"></auto-complete>
+    </tags-input>
+ 
+    <div class="container">
 
 		<!-- HEADER AND TODO COUNT -->
 		<div class="text-center">
@@ -55,21 +69,6 @@
 				<p class="text-center" ng-show="loading">
 					<span class="fa fa-spinner fa-spin fa-3x"></span>
 				</p>
-
-                <!-- Experiment with Tag input here -->
-                <tags-input ng-model="tags"
-                            display-property="name"
-                            placeholder="Add a country"
-                            replace-spaces-with-dashes="false"
-                            template="tag-template">
-                    <auto-complete source="loadCountries($query)"
-                                   min-length="0"
-                                   load-on-focus="true"
-                                   load-on-empty="true"
-                                   max-results-to-show="32"
-                                   template="autocomplete-template"></auto-complete>
-                </tags-input>
-
 
 			</div>
 		</div>
