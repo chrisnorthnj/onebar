@@ -1,6 +1,6 @@
-var app = angular.module('plunker', ['ngTagsInput']);
+var app = angular.module('tagInput', ['ngTagsInput']);
 
-app.controller('MainCtrl', function($scope, $http) {
+app.controller('tagController', function($scope, $http) {
   $scope.tags = [
     { name: "Brazil", flag: "Brazil.png" },
     { name: "Italy", flag: "Italy.png" },
