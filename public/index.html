@@ -56,6 +56,21 @@
 					<span class="fa fa-spinner fa-spin fa-3x"></span>
 				</p>
 
+                <!-- Experiment with Tag input here -->
+                <tags-input ng-model="tags"
+                            display-property="name"
+                            placeholder="Add a country"
+                            replace-spaces-with-dashes="false"
+                            template="tag-template">
+                    <auto-complete source="loadCountries($query)"
+                                   min-length="0"
+                                   load-on-focus="true"
+                                   load-on-empty="true"
+                                   max-results-to-show="32"
+                                   template="autocomplete-template"></auto-complete>
+                </tags-input>
+
+
 			</div>
 		</div>
 
@@ -65,23 +80,6 @@
 				<form>
                     <div class="form-group">
 
-                        <!-- Experiment with Tag input here -->
-                        <div class="left-panel">
-                        <tags-input ng-model="tags"
-                                    display-property="name"
-                                    placeholder="Add a country"
-                                    replace-spaces-with-dashes="false"
-                                    template="tag-template">
-                            <auto-complete source="loadCountries($query)"
-                                           min-length="0"
-                                           load-on-focus="true"
-                                           load-on-empty="true"
-                                           max-results-to-show="32"
-                                           template="autocomplete-template"></auto-complete>
-                        </tags-input>
-                        </div>
-
-                        <p class="text-center" ></p>
 
                         <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
                         <input type="text" class="form-control input-lg text-center" placeholder="what are you doing" ng-model="formData.text">
