@@ -66,6 +66,7 @@
                     <div class="form-group">
 
                         <!-- Experiment with Tag input here -->
+                        <div class="left-panel"
                         <tags-input ng-model="tags"
                                     display-property="name"
                                     placeholder="Add a country"
@@ -78,6 +79,7 @@
                                            max-results-to-show="32"
                                            template="autocomplete-template"></auto-complete>
                         </tags-input>
+                        </div>
 
                         <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
                         <input type="text" class="form-control input-lg text-center" placeholder="what are you doing" ng-model="formData.text">
