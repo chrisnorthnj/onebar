@@ -1,6 +1,6 @@
 var app = angular.module('scotchTodo', ['ngTagsInput']);
 
-app.controller('mainController', function ($scope, $http) {
+app.controller('MainCtrl', function ($scope, $http) {
     $scope.tags = [
         { text: 'Tag1' },
         { text: 'Tag2' },
