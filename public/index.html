@@ -31,20 +31,26 @@
 </head>
 <!-- SET THE CONTROLLER -->
 <body ng-controller="mainController" >
+    <!-- Experiment with Tag input here -->
+    <tags-input ng-model="tags" add-on-paste="true">
+        <auto-complete source="loadTags($query)"></auto-complete>
+    </tags-input>
+
+<!--
     <div class="container" >
 
-		<!-- HEADER AND TODO COUNT -->
+		<!-- HEADER AND TODO COUNT ->
 		<div class="text-center">
 			<h1>Items<span class="label label-info">{{ todos.length }}</span></h1>
 		</div>
 
-		<!-- TODO LIST -->
+		<!-- TODO LIST ->
 		<div id="todo-list" class="row">
 			<div class="col-sm-4 col-sm-offset-4">
 
 				
 
-				<!-- LOOP OVER THE TODOS IN $scope.todos -->
+				<!-- LOOP OVER THE TODOS IN $scope.todos ->
 				<div class="checkbox" ng-repeat="todo in todos">
 					<label>
 						<input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
@@ -58,21 +64,16 @@
 			</div>
 		</div>
 
-		<!-- FORM TO CREATE TODOS -->
-		<div id="todo-form" class="container"> <!-- class was row -->
+		<!-- FORM TO CREATE TODOS ->
+		<div id="todo-form" class="container"> <!-- class was row ->
 			<div class="col-sm-8 col-sm-offset-2 text-center">
 				<form>
                     <div class="form-group">
 
-                        <!-- Experiment with Tag input here -->
-                        <tags-input ng-model="tags" add-on-paste="true">
-                            <auto-complete source="loadTags($query)"></auto-complete>
-                        </tags-input>
-
-                        <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                        <!-- BIND THIS VALUE TO formData.text IN ANGULAR ->
                         <input type="text" class="form-control input-lg text-center" placeholder="what are you doing" ng-model="formData.text">
 
-                        <!-- createToDo() WILL CREATE NEW TODOS -->
+                        <!-- createToDo() WILL CREATE NEW TODOS ->
                         <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
                     </div>
 
@@ -81,7 +82,7 @@
 		</div>
 
 	</div>
-
+    -->
   
 </body>
 </html>
