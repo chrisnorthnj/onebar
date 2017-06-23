@@ -65,15 +65,17 @@
                     <div class="form-group">
 
                         <!-- Experiment with Tag input here -->
-                        <tags-input ng-model="tags" add-on-paste="true">
-                            <auto-complete source="loadTags($query)"></auto-complete>
-                        </tags-input>
+                        <div ng-controller="tagController">
+                            <tags-input ng-model="tags" add-on-paste="true">
+                                <auto-complete source="loadTags($query)"></auto-complete>
+                            </tags-input>
 
-                        <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-                        <input type="text" class="form-control input-lg text-center" placeholder="what are you doing" ng-model="formData.text">
+                            <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                            <input type="text" class="form-control input-lg text-center" placeholder="what are you doing" ng-model="formData.text">
 
-                        <!-- createToDo() WILL CREATE NEW TODOS -->
-                        <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
+                            <!-- createToDo() WILL CREATE NEW TODOS -->
+                            <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
+                        </div>
                     </div>
 
 				</form>
