@@ -2,9 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\models",
     "\\config",
-    "\\public"
+    "\\public",
+    "\\public\\js",
+    "\\public\\js\\controllers",
+    "\\public\\js\\services"
   ],
-  "SelectedNode": "\\public\\index.html",
+  "SelectedNode": "\\public\\js\\controllers\\main.js",
   "PreviewInSolutionExplorer": false
 }
