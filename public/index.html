@@ -18,7 +18,6 @@
 		#todo-list 				{ margin-bottom:30px; }
 		#todo-form 	 			{ margin-bottom:50px; }
 	</style>
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="http://mbenford.github.io/ngTagsInput/css/ng-tags-input.min.css" />
 
 	<!-- SPELLS -->
@@ -33,7 +32,7 @@
 <!-- SET THE CONTROLLER -->
 <body ng-controller="mainController" >
     <!-- Experiment with Tag input here -->
-    <div >
+    <div ng-controller="tagController">
     <tags-input ng-model="tags"
                 display-property="name"
                 placeholder="Add a country"
