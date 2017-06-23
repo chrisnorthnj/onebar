@@ -1,6 +1,6 @@
 var app = angular.module('myapp', ['ngTagsInput']);
 
-app.controller('tagController', function($scope, $http) {
+app.controller('mainController', function($scope, $http) {
   $scope.tags = [
     { name: "Brazil", flag: "Brazil.png" },
     { name: "Italy", flag: "Italy.png" },
