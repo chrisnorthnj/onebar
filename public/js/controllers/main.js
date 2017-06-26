@@ -23,9 +23,6 @@ angular.module('todoController', [])
 			if ($scope.formData.text != undefined) {
                 $scope.loading = true;
 
-                //  Pull tags into form data to be submitted
-                $scope.formData.tags = $scope.tags.data;
-
 				// call the create function from our service (returns a promise object)
 				Todos.create($scope.formData)
 
