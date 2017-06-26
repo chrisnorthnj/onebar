@@ -56,5 +56,4 @@ angular.module('todoController', [])
         $scope.loadTags = function (query) {
             return $http.get('tags.json');
         };
-        angular.bootstrap('tags', [ngTagsInput]);
 	}]);
