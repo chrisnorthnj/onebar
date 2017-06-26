@@ -6,9 +6,9 @@ module.exports = mongoose.model('Todo', {
         default: ''
     },
     tags: {
-        text: {
+        text: [{
             type: String,
             default: ''
-        }
+        }]
     }
 });
