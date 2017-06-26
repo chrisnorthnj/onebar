@@ -25,9 +25,10 @@
     <script src="http://mbenford.github.io/ngTagsInput/js/ng-tags-input.min.js"></script>
 
 	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
+    <script src="js/controllers/taginput.js"></script> <!-- load up our taginput thing -->
 	<script src="js/services/todos.js"></script> <!-- load our todo service -->
 	<script src="js/core.js"></script> <!-- load our main application -->
-    <!-- <script src="js/app.js"></script> <!-- load the tag preload routines -->
+    <!-- <script src="js/app.js"></script> --><!-- load the tag preload routines -->
 </head>
 <!-- SET THE CONTROLLER -->
 <body ng-controller="mainController" >
@@ -65,9 +66,9 @@
                     <div class="form-group">
 
                         <!-- Experiment with Tag input here -->
-                          <!--  <tags-input ng-model="tags" add-on-paste="true">
+                            <tags-input ng-model="tags" add-on-paste="true">
                                 <auto-complete source="loadTags($query)"></auto-complete>
-                            </tags-input> -->
+                            </tags-input>
 
                             <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
                             <input type="text" class="form-control input-lg text-center" placeholder="what are you doing" ng-model="formData.text">
