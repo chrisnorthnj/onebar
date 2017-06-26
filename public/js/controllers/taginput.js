@@ -1,4 +1,4 @@
-angular.module('taginput', ['ngTagsInput']);
+angular.module('taginput', ['ngTagsInput'])
 
 .controller('mainController', function ($scope, $http) {
     $scope.tags = [
