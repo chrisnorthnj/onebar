@@ -1,4 +1,4 @@
-angular.module('todoController', [])
+angular.module('todoController', [ngTagsInput])
 
 	// inject the Todo service factory into our controller
 	.controller('mainController', ['$scope','$http','Todos', function($scope, $http, Todos) {
@@ -46,5 +46,14 @@ angular.module('todoController', [])
 					$scope.loading = false;
 					$scope.todos = data; // assign our new list of todos
 				});
-		};
+        };
+
+        // TAGS Input Section ======================================================
+        // Hope this finally works
+        $scope.tags = [
+        ];
+
+        $scope.loadTags = function (query) {
+            return $http.get('tags.json');
+        };
 	}]);

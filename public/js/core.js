@@ -1,1 +1,1 @@
-angular.module('scotchTodo', ['todoController', 'todoService', 'taginput']);
+angular.module('scotchTodo', ['todoController', 'todoService']);
