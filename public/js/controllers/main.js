@@ -88,5 +88,5 @@ angular.module('todoController', [])
         $scope.foc = function () {
             document.getElementById("s1").focus()
         };
-    });
-	// }]);
+    //});
+     }]);
