@@ -57,7 +57,7 @@ angular.module('todoController', [])
             return $http.get('tags.json');
         }; */
         $scope.options = ["Text", "Markdown", "HTML", "PHP", "Python", "Java", "JavaScript", "Ruby", "VHDL", "Verilog", "C#", "C/C++"];
-        $scope.tags = ["Markdown", "Ruby"];
+        $scope.tags = [];
 
         $scope.font = null;
         $scope.fonts = [
