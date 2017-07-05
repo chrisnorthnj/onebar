@@ -67,7 +67,7 @@
                     <div class="form-group">
 
                         <!-- Experiment with Tag input here -->
-                        <tagger ng-model="formData.tags" options="options" placeholder="Select some tags"></tagger>
+                        <tagger ng-model="tags" options="options" placeholder="Select some tags"></tagger>
                             <!-- <tags-input ng-model="formData.tags" add-on-paste="true">
                                 <auto-complete source="loadTags($query)"></auto-complete>
                             </tags-input> -->
@@ -81,7 +81,7 @@
 
 				</form>
                 <pre>{{formData | json}}</pre>
-			</div>
+                <pre>{{tags | json}}</pre>			</div>
 		</div>
 
 	</div>
