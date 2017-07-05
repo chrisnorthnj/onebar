@@ -9,6 +9,6 @@
     "\\public\\js\\controllers",
     "\\public\\js\\services"
   ],
-  "SelectedNode": "\\public\\tags.json",
+  "SelectedNode": "\\app\\models\\todo.js",
   "PreviewInSolutionExplorer": false
 }
