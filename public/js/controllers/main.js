@@ -50,10 +50,43 @@ angular.module('todoController', [])
 
         // TAGS Input Section ======================================================
         // Hope this finally works
-        $scope.tags = [
+        /* $scope.tags = [
         ];
 
         $scope.loadTags = function (query) {
             return $http.get('tags.json');
-        };
+        }; */
+        $scope.options = ["Text", "Markdown", "HTML", "PHP", "Python", "Java", "JavaScript", "Ruby", "VHDL", "Verilog", "C#", "C/C++"]
+        $scope.tags = ["Markdown", "Ruby"]
+
+        $scope.font = null
+        $scope.fonts = [
+            { id: 1, name: "Lucida" },
+            { id: 2, name: "DejaVu" },
+            { id: 3, name: "Bitstream" },
+            { id: 4, name: "Liberation" },
+            { id: 5, name: "Verdana" }
+        ]
+
+        $scope.font2 = $scope.fonts[1]
+
+        $scope.showName = function (font) { return font.name; }
+        $scope.createName = function (name) { return { name: name } }
+
+        $scope.empty = {
+            value: [],
+            options: [],
+            addOption: function () {
+                $scope.empty.options.push(Math.random())
+            }
+        }
+
+        $scope.selected = function (item) {
+            console.log("SELECTED ", item)
+        }
+
+        $scope.foc = function () {
+            document.getElementById("s1").focus()
+        }
+    })
 	}]);

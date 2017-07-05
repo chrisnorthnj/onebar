@@ -18,11 +18,13 @@
 		#todo-list 				{ margin-bottom:30px; }
 		#todo-form 	 			{ margin-bottom:50px; }
 	</style>
-    <link rel="stylesheet" href="http://mbenford.github.io/ngTagsInput/css/ng-tags-input.min.css" />
+    <!-- <link rel="stylesheet" href="http://mbenford.github.io/ngTagsInput/css/ng-tags-input.min.css" /> -->
+    <link rel="stylesheet" href="angular-tagger.css" />
 
 	<!-- SPELLS -->
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script><!-- load angular - was originally 1.2.16 -->
-    <script src="js/ngTagsInput.js"></script>
+    <!-- <script src="js/ngTagsInput.js"></script> -->
+    <script src="js/angular-tagger.js"></script>
 
 	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
 	<script src="js/services/todos.js"></script> <!-- load our todo service -->
@@ -65,9 +67,10 @@
                     <div class="form-group">
 
                         <!-- Experiment with Tag input here -->
-                            <tags-input ng-model="formData.tags" add-on-paste="true">
+                        <tagger ng-model="tags" options="options" placeholder="Select some tags"></tagger>
+                            <!-- <tags-input ng-model="formData.tags" add-on-paste="true">
                                 <auto-complete source="loadTags($query)"></auto-complete>
-                            </tags-input>
+                            </tags-input> -->
 
                             <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
                             <input type="text" class="form-control input-lg text-center" placeholder="what are you doing" ng-model="formData.text">
