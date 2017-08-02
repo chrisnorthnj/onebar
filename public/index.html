@@ -2,89 +2,111 @@
 
 <!-- ASSIGN OUR ANGULAR MODULE -->
 <html ng-app="scotchTodo">
+
 <head>
-	<!-- META -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Optimize mobile viewport -->
 
-	<title>Onebar</title>
+    <title>Onebar</title>
 
-	<!-- SCROLLS -->
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-	<style>
-		html 					{ overflow-y:scroll; }
-		body 					{ padding-top:50px; }
-		#todo-list 				{ margin-bottom:30px; }
-		#todo-form 	 			{ margin-bottom:50px; }
-	</style>
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <!-- load bootstrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <style>
+        html {
+            overflow-y: scroll;
+        }
+        
+        body {
+            padding-top: 50px;
+        }
+        
+        #todo-list {
+            margin-bottom: 30px;
+        }
+        
+        #todo-form {
+            margin-bottom: 50px;
+        }
+    </style>
     <!-- <link rel="stylesheet" href="http://mbenford.github.io/ngTagsInput/css/ng-tags-input.min.css" /> -->
     <link rel="stylesheet" href="angular-tagger.css" />
 
-	<!-- SPELLS -->
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script><!-- load angular - was originally 1.2.16 -->
+    <!-- SPELLS -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <!-- load angular - was originally 1.2.16 -->
     <!-- <script src="js/ngTagsInput.js"></script> -->
     <script src="js/angular-tagger.js"></script>
 
-	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
-	<script src="js/services/todos.js"></script> <!-- load our todo service -->
-	<script src="js/core.js"></script> <!-- load our main application -->
-    <!-- <script src="js/app.js"></script> --><!-- load the tag preload routines -->
+    <script src="js/controllers/main.js"></script>
+    <!-- load up our controller -->
+    <script src="js/services/todos.js"></script>
+    <!-- load our todo service -->
+    <script src="js/core.js"></script>
+    <!-- load our main application -->
+    <!-- <script src="js/app.js"></script> -->
+    <!-- load the tag preload routines -->
 </head>
 <!-- SET THE CONTROLLER -->
-<body ng-controller="mainController" >
-    <div class="container" >
 
-		<!-- HEADER AND TODO COUNT -->
-		<div class="text-center">
-			<h1>Items<span class="label label-info">Count here{{ todos.length }}</span></h1>
-		</div>
+<body ng-controller="mainController">
+    <div class="container">
 
-		<!-- TODO LIST -->
-		<div id="todo-list" class="row">
-			<div class="col-sm-4 col-sm-offset-4">
+        <!-- HEADER AND TODO COUNT -->
+        <div class="text-center">
+            <h1>Items<span class="label label-info">Count here{{ todos.length }}</span></h1>
+        </div>
 
-				
+        <!-- TODO LIST -->
+        <div id="todo-list" class="row">
+            <div class="col-sm-4 col-sm-offset-4">
 
-				<!-- LOOP OVER THE TODOS IN $scope.todos -->
-				<div class="checkbox" ng-repeat="todo in todos">
-					<label>
+
+
+                <!-- LOOP OVER THE TODOS IN $scope.todos -->
+                <div class="checkbox" ng-repeat="todo in todos">
+                    <label>
 						<input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
 					</label>
-				</div>
+                </div>
 
-				<p class="text-center" ng-show="loading">
-					<span class="fa fa-spinner fa-spin fa-3x"></span>
-				</p>
+                <p class="text-center" ng-show="loading">
+                    <span class="fa fa-spinner fa-spin fa-3x"></span>
+                </p>
 
-			</div>
-		</div>
+            </div>
+        </div>
 
-		<!-- FORM TO CREATE TODOS -->
-		<div id="todo-form" class="container"> <!-- class was row -->
-			<div class="col-sm-8 col-sm-offset-2 text-center">
-				<form>
+        <!-- FORM TO CREATE TODOS -->
+        <div id="todo-form" class="container">
+            <!-- class was row -->
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <form>
                     <div class="form-group">
 
                         <!-- Experiment with Tag input here -->
-                        <tagger ng-model="formData.tags" options="options" placeholder="Select some tags"></tagger>
-                            <!-- <tags-input ng-model="formData.tags" add-on-paste="true">
+                        <tagger ng-model="tags" options="options" placeholder="Select some tags"></tagger>
+                        <!-- <tags-input ng-model="formData.tags" add-on-paste="true">
                                 <auto-complete source="loadTags($query)"></auto-complete>
                             </tags-input> -->
 
-                            <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-                            <input type="text" class="form-control input-lg text-center" placeholder="what are you doing" ng-model="formData.text">
+                        <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                        <input type="text" class="form-control input-lg text-center" placeholder="what are you doing" ng-model="formData.text">
 
-                            <!-- createToDo() WILL CREATE NEW TODOS -->
-                            <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
+                        <!-- createToDo() WILL CREATE NEW TODOS -->
+                        <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
                     </div>
 
-				</form>
+                </form>
                 <pre>{{formData | json}}</pre>
-                <pre>{{formData.tags.text | json}}</pre>			</div>
-		</div>
+                <pre>{{formData.tags.text | json}}</pre> </div>
+        </div>
 
-	</div>
-  
+    </div>
+
 </body>
+
 </html>
