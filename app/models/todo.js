@@ -6,7 +6,10 @@ module.exports = mongoose.model('Todo', {
         default: ''
     },
     tags: {
-            type: String,
-            default: ''
+        type: Array,
+        items: {
+            type: String
+        },
+        default: ''
     }
 });
